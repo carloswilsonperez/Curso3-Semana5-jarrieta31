@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mascotas</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="descipcion_perro">Perro buldog</string>
+    <string name="nombre">Nombre de mascota</string>
+    <string name="pnombre">nombre</string>
+    <string name="num_likes">4</string>
+    <string name="pnum_likes">numLikes</string>
+    <string name="action_settings">Settings</string>
+    <string name="titulo">Petagram</string>
+</resources>
