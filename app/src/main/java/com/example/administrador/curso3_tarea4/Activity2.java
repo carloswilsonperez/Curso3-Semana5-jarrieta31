@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.administrador.curso3_tarea4.adapter.MascotaAdaptador;
+import com.example.administrador.curso3_tarea4.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class Activity2 extends AppCompatActivity {

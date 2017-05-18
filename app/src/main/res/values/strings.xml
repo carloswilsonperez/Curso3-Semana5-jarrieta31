@@ -9,4 +9,13 @@
     <string name="pnum_likes">numLikes</string>
     <string name="action_settings">Settings</string>
     <string name="titulo">Petagram</string>
+    <string name="hint_nombre">Nombre: </string>
+    <string name="hint_email">Email: </string>
+    <string name="hint_mensaje">Escribe tu mensaje aquí</string>
+    <string name="titulo_formulario">Formulario de contacto</string>
+    <string name="title_activity_acercade">AcercadeActivity</string>
+    <string name="btn_enviar">Enviar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

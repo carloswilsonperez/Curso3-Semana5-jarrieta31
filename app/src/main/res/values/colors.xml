@@ -3,6 +3,7 @@
     <color name="colorPrimary">#75E2E9</color>
     <color name="colorPrimaryDark">#3cb0b7</color>
     <color name="colorAccent">#EF5344</color>
+    <color name="colorBlanco">#ffffff</color>
     <color name="navigationBarColor">#4c3d41</color>
     <color name="fondo_perro00">#7FB348</color>
     <color name="fondo_perro01">#0F7BC4</color>
@@ -13,4 +14,5 @@
     <color name="fondo_perro06">#aeb8e1</color>
     <color name="fondo_perro07">#fc4671</color>
     <color name="fondo_perro08">#d0f591</color>
+
 </resources>

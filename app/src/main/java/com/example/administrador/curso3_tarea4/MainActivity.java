@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,39 +16,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.example.administrador.curso3_tarea4.adapter.MascotaAdaptador;
+import com.example.administrador.curso3_tarea4.adapter.PageAdapter;
+import com.example.administrador.curso3_tarea4.fragment.HomeFragment;
+import com.example.administrador.curso3_tarea4.fragment.PerfilFragment;
+import com.example.administrador.curso3_tarea4.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
-    public MascotaAdaptador adaptador;
-
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // **** ToolBar ******************
-        Toolbar toolbar = (Toolbar) findViewById(R.id.miToolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false); // Oculta el titulo del ToolBar
+
+        toolbar     = (Toolbar)findViewById(R.id.toolbar);
+        tabLayout   = (TabLayout)findViewById(R.id.tabLayout);
+        viewPager   = (ViewPager) findViewById(R.id.viewPager);
+
+        setUpViewPager();
+
+        if (toolbar!=null){
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(false); // Oculta el titulo del ToolBar
+        }
 
         ImageView imgFavotitas = (ImageView)findViewById(R.id.imgFaboritas);
-
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
-
-        // Instacia el linearLayoutManager que sirve para manejar la forma en que se ve la lista
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        //Le decimos que el RecyclerView se comporte como un LinearLayoutManager y adquiera todas sus propiedades
-        listaMascotas.setLayoutManager(llm);
-        // Inicializamos la lista de contactos
-        inicializarListaMascotas();
-        // Inicializamos el adaptador
-        inicializaAdaptador();
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,23 +65,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()){
 
             case R.id.mContacto:
-                Intent intent1 = new Intent(this, Activity2.class);
+                Intent intent1 = new Intent(this, FormularioActivity.class);
                 startActivity(intent1);
                 break;
 
             case R.id.mAcercaDe:
-                Intent intent2 = new Intent(this, Activity2.class);
+                Intent intent2 = new Intent(this, AcercadeActivity.class);
                 startActivity(intent2);
                 break;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 
 
     // Abre el activity2 con las 5 mascotas favoritas
@@ -89,23 +87,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Inicializa el adaptador
-    public void inicializaAdaptador(){
-        adaptador = new MascotaAdaptador(mascotas, this);
-        listaMascotas.setAdapter(adaptador);
+    // Método para cargar el ArrayList con los fragments existentes
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        // Cargo los fragments en el órden que los quiero mostrar
+        fragments.add(new HomeFragment());
+        fragments.add(new PerfilFragment());
+        return  fragments;
     }
 
-    // Cargo las mascotas a mostrar
-    public void inicializarListaMascotas(){
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Pulgarcito", 2, R.drawable.perro00, R.color.fondo_perro00));
-        mascotas.add(new Mascota("Yaman", 5, R.drawable.perro01, R.color.fondo_perro01));
-        mascotas.add(new Mascota("Toby", 3, R.drawable.perro02, R.color.fondo_perro02));
-        mascotas.add(new Mascota("Peñarol", 3, R.drawable.perro03, R.color.fondo_perro03));
-        mascotas.add(new Mascota("Fausto", 4, R.drawable.perro04, R.color.fondo_perro04));
-        mascotas.add(new Mascota("Rafa", 2, R.drawable.perro05, R.color.fondo_perro05));
-        mascotas.add(new Mascota("Duke", 2, R.drawable.perro06, R.color.fondo_perro06));
-        mascotas.add(new Mascota("Spayck", 2, R.drawable.perro07, R.color.fondo_perro07));
-        mascotas.add(new Mascota("Paco", 5, R.drawable.perro08, R.color.fondo_perro08));
+    // Método para poner en orvita los fragments
+    private void setUpViewPager(){
+        // Se inicializa el viewPager con una instancia de la clase PageAdapter, se le pasa el manejador de fragments y
+        // por último se llama a la funcion agregarFragments que devuelve el ArrayList con los fragments.
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_perro);
     }
+
+
 }

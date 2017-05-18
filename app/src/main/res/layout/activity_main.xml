@@ -7,29 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<LinearLayout
-    android:id="@+id/llmain"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="24dp"
-    android:orientation="vertical"
-    tools:ignore="InvalidId">
-
-    <include
-        android:id="@+id/miToolBar"
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-    <include
-        layout="@layout/content_main"
-        android:layout_width="match_parent"
+    <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
-        android:layout_below="@id/miToolBar"
-        tools:ignore="ObsoleteLayoutParam" />
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-</LinearLayout>
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+<!--
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </android.support.v7.widget.Toolbar>
+-->
+        <!-- tag para los -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- Contenedor donde viven los fragments -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
