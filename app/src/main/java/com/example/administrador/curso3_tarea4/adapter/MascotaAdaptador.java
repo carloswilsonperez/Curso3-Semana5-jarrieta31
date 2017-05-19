@@ -9,10 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.example.administrador.curso3_tarea4.R;
 import com.example.administrador.curso3_tarea4.pojo.Mascota;
-
 import java.util.ArrayList;
 
 /**

@@ -9,47 +9,91 @@
     tools:showIn="@layout/activity_acercade">
 
     <TextView
+        android:id="@+id/tvAcercadeEstudios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_acercade_estudios"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAcercadeEdad" />
+
+    <TextView
         android:id="@+id/tvTituloAcercade"
         android:layout_width="80dp"
         android:layout_height="16dp"
-        android:text="Acerca de ..."
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintHorizontal_bias="0.501"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText"
+        tools:text="@string/titulo_acercade" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imgAcercade"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription=""
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloAcercade"
-        app:srcCompat="@drawable/perro03"
-        android:contentDescription="" />
+        app:srcCompat="@drawable/homero"
+        android:layout_marginTop="25dp"
 
-    <EditText
-        android:id="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloAcercade" />
+
+
+    <TextView
+        android:id="@+id/tvAcercadeNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="texto"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Nombre Completo:"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgAcercade"
+        android:layout_marginLeft="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="24dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="HardcodedText,LabelFor" />
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvAcercadeEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad: 105 años"
+        android:layout_marginRight="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAcercadeNombre"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvAcercadeExperiencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experiencia Laboral:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAcercadeEstudios"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+
 
 </android.support.constraint.ConstraintLayout>
