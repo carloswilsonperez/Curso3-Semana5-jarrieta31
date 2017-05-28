@@ -1,4 +1,4 @@
-package com.example.administrador.curso3_tarea4;
+package com.example.administrador.curso3_tarea5;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.administrador.curso3_tarea4.adapter.MascotaAdaptador;
-import com.example.administrador.curso3_tarea4.pojo.Mascota;
+import com.example.administrador.curso3_tarea5.adapter.MascotaAdaptador;
+import com.example.administrador.curso3_tarea5.pojo.Mascota;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,4 @@
-package com.example.administrador.curso3_tarea4.pojo;
-
-import android.content.res.Resources;
+package com.example.administrador.curso3_tarea5.pojo;
 
 /**
  * Created by administrador on 08/05/17.
@@ -8,6 +6,7 @@ import android.content.res.Resources;
 
 public class Mascota {
 
+    private int id;
     private String nombre;
     private int numLinkes;
     private int foto;
@@ -20,6 +19,10 @@ public class Mascota {
         this.numLinkes = numLinkes;
         this.foto = foto;
         this.colorFondo = colorFondo;
+    }
+
+    public Mascota(){
+
     }
 
 
@@ -53,5 +56,13 @@ public class Mascota {
 
     public void setColorFondo(int colorFondo) {
         this.colorFondo = colorFondo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

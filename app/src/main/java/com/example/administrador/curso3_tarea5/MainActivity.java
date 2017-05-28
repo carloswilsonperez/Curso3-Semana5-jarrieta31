@@ -1,4 +1,4 @@
-package com.example.administrador.curso3_tarea4;
+package com.example.administrador.curso3_tarea5;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,19 +8,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.example.administrador.curso3_tarea4.adapter.MascotaAdaptador;
-import com.example.administrador.curso3_tarea4.adapter.PageAdapter;
-import com.example.administrador.curso3_tarea4.fragment.HomeFragment;
-import com.example.administrador.curso3_tarea4.fragment.PerfilFragment;
-import com.example.administrador.curso3_tarea4.pojo.Mascota;
+import com.example.administrador.curso3_tarea5.adapter.PageAdapter;
+import com.example.administrador.curso3_tarea5.vista_fragment.HomeFragment;
+import com.example.administrador.curso3_tarea5.vista_fragment.PerfilFragment;
 
 import java.util.ArrayList;
 

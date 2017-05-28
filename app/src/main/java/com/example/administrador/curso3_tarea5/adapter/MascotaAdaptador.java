@@ -1,7 +1,8 @@
-package com.example.administrador.curso3_tarea4.adapter;
+package com.example.administrador.curso3_tarea5.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.example.administrador.curso3_tarea4.R;
-import com.example.administrador.curso3_tarea4.pojo.Mascota;
+import android.widget.Toast;
+
+import com.example.administrador.curso3_tarea5.R;
+import com.example.administrador.curso3_tarea5.bd.ConstructorMascotas;
+import com.example.administrador.curso3_tarea5.pojo.Mascota;
 import java.util.ArrayList;
 
 /**
@@ -19,9 +23,11 @@ import java.util.ArrayList;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
+    private static final String TAG = "depurador";
     ArrayList<Mascota> mascotas;
     Activity activity;
     int likes;
+
 
 
     // Constructor
@@ -47,20 +53,14 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.tvNombre.setText(mascota.getNombre()); // Seteo el cardView con la foto recibida del ArrayList
         mascotaViewHolder.llCardView.setBackgroundResource(mascota.getColorFondo()); // Establece el color de fondo
 
-
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if ( likes == 0 ) {
-
-                    likes = (mascota.getNumLinkes()+1);
-                }else {
-                    likes ++;
-                }
-
-                mascotaViewHolder.tvNumLikes.setText(Integer.toString(likes));
-                //Toast.makeText(activity, "Has dado me gusta en " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota); // llama al metodo
+                mascotaViewHolder.tvNumLikes.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascota)));
+                Toast.makeText(activity, "Has dado like en " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
             }
         });
     }

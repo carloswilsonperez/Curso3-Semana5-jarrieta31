@@ -1,16 +1,15 @@
-package com.example.administrador.curso3_tarea4.adapter;
+package com.example.administrador.curso3_tarea5.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.example.administrador.curso3_tarea4.R;
-import com.example.administrador.curso3_tarea4.pojo.Mascota;
+import com.example.administrador.curso3_tarea5.R;
+import com.example.administrador.curso3_tarea5.pojo.Mascota;
 import java.util.ArrayList;
 
 /**

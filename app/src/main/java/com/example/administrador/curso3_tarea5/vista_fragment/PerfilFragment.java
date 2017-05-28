@@ -1,17 +1,16 @@
-package com.example.administrador.curso3_tarea4.fragment;
+package com.example.administrador.curso3_tarea5.vista_fragment;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.example.administrador.curso3_tarea4.R;
-import com.example.administrador.curso3_tarea4.adapter.PerfilAdaptador;
-import com.example.administrador.curso3_tarea4.pojo.Mascota;
+import com.example.administrador.curso3_tarea5.R;
+import com.example.administrador.curso3_tarea5.adapter.PerfilAdaptador;
+import com.example.administrador.curso3_tarea5.pojo.Mascota;
 
 import java.util.ArrayList;
 
