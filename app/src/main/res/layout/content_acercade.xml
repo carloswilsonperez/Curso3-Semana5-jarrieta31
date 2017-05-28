@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.administrador.curso3_tarea5.AcercadeActivity"
+    tools:context="com.example.administrador.curso3_tarea5.Activity.AcercadeActivity"
     tools:showIn="@layout/activity_acercade">
 
     <ScrollView

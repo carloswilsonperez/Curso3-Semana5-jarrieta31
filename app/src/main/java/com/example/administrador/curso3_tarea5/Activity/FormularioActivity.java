@@ -1,4 +1,4 @@
-package com.example.administrador.curso3_tarea5;
+package com.example.administrador.curso3_tarea5.Activity;
 
 import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.administrador.curso3_tarea5.R;
 
 import java.util.Properties;
 

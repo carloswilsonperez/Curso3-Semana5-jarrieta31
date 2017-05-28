@@ -1,4 +1,4 @@
-package com.example.administrador.curso3_tarea5;
+package com.example.administrador.curso3_tarea5.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.example.administrador.curso3_tarea5.R;
 import com.example.administrador.curso3_tarea5.adapter.PageAdapter;
 import com.example.administrador.curso3_tarea5.vista_fragment.HomeFragment;
 import com.example.administrador.curso3_tarea5.vista_fragment.PerfilFragment;

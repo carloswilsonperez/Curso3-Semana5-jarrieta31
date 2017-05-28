@@ -11,11 +11,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.administrador.curso3_tarea5.R;
 import com.example.administrador.curso3_tarea5.bd.ConstructorMascotas;
 import com.example.administrador.curso3_tarea5.pojo.Mascota;
+
 import java.util.ArrayList;
+
 
 /**
  * Created by administrador on 08/05/17.
@@ -27,7 +28,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     ArrayList<Mascota> mascotas;
     Activity activity;
     int likes;
-
 
 
     // Constructor
@@ -67,7 +67,11 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     public int getItemCount(){
-        return mascotas.size();
+        if(mascotas == null){
+        return 0;
+        } else {
+            return mascotas.size();
+        }
     }
 
     //**********  Clase interna MascotaViewHolder *****************

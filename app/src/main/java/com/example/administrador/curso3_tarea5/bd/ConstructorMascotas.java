@@ -118,4 +118,12 @@ public class ConstructorMascotas {
         BaseDatos db = new BaseDatos(context); // Instacio el objeto BaseDatos
         return db.obtenerLikesMascota(mascota); // Ejecuta el metodo para obtener el numero de likes y devuelve un integer
     }
+
+
+    public ArrayList<Mascota> obtener5Datos(){
+        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();  //instancio el ArrayList contactos
+        BaseDatos db = new BaseDatos(context); // Intacio la clase BaseDatos
+        mascotas = db.obtener5Mascotas(); // trae las 5 mascotas
+        return mascotas;
+    }
 }

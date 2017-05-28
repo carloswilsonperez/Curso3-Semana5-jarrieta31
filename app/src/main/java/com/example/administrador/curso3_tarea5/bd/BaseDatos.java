@@ -57,7 +57,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     // método para obtener todos las mascotas, que devuelve un ArrayList de tipo Mascota
     public ArrayList<Mascota> obtenerTodasLasMascotas(){
 
-        ArrayList<Mascota> contactos = new ArrayList<Mascota>(); // Instacia el ArrayList para devolver
+        ArrayList<Mascota> mascotas = new ArrayList<Mascota>(); // Instacia el ArrayList para devolver
         String query = "SELECT * FROM " + ConstantesDB.TABLE_MASCOTA; // Consulta sql
         SQLiteDatabase db = this.getWritableDatabase(); // Abre la base de datos en modo escritura
         Cursor registros = db.rawQuery(query, null); //Obtiene todas los filas y las guarda en objeto de tipo cursor registros
@@ -70,10 +70,10 @@ public class BaseDatos extends SQLiteOpenHelper {
             mascotaActual.setColorFondo(registros.getInt(3));
             mascotaActual.setNumLinkes(registros.getInt(4));
 
-            contactos.add(mascotaActual);
+            mascotas.add(mascotaActual);
         }
         db.close(); // Cierra la conexión a la BD
-        return contactos;
+        return mascotas;
     }
 
     //  Método para ingresar una nueva mascota. Este recibe como argumento un contenedor de valores
@@ -114,9 +114,11 @@ public class BaseDatos extends SQLiteOpenHelper {
     public ArrayList<Mascota> obtener5Mascotas(){
 
         ArrayList<Mascota> mascotas = new ArrayList<Mascota>(); // Instacia el ArrayList para devolver
+     //   String query = "SELECT * FROM mascota";
+
         String query = "SELECT * FROM "+ConstantesDB.TABLE_MASCOTA+
                         " ORDER BY "+ConstantesDB.TABLE_MASCOTA_LIKES+
-                        " DESC LIMIT 5"; // Consulta sql
+                        " DESC LIMIT 5";
         SQLiteDatabase db = this.getWritableDatabase(); // Abre la base de datos en modo escritura
         Cursor registros = db.rawQuery(query, null); //Obtiene todas los filas y las guarda en objeto de tipo cursor registros
 

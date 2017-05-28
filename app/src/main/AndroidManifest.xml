@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="Mascotas"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,17 +20,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity2"
-            android:parentActivityName=".MainActivity">
+            android:name=".Activity.Activity2"
+            android:parentActivityName=".Activity.MainActivity">
 
             <!-- Soporte para versiones 4.0 o menores -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".FormularioActivity" />
+        <activity android:name=".Activity.FormularioActivity" />
         <activity
-            android:name=".AcercadeActivity"
+            android:name=".Activity.AcercadeActivity"
             android:label="@string/title_activity_acercade"
             android:theme="@style/AppTheme"></activity>
     </application>
